@@ -60,14 +60,14 @@
             https://{{ entry.type }}.com/{{ site[entry.type].username }}
           {%- endcapture -%}
         {% when 'email' %}
-          {% assign email = site.social.email | split: '@' %}
-          {%- capture url -%}
-            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-          {%- endcapture -%}
-          <!--{% assign email = site.social.email %}-->
+          <!--{% assign email = site.social.email | split: '@' %}-->
           <!--{%- capture url -%}-->
-          <!--  https://mail.google.com/mail/?view=cm&fs=1&to={{ email }}-->
+          <!--  javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')-->
           <!--{%- endcapture -%}-->
+          {% assign email = site.social.email %}
+          {%- capture url -%}
+            https://mail.google.com/mail/?view=cm&fs=1&to={{ email }}
+          {%- endcapture -%}
         {% when 'rss' %}
           {% assign url = '/feed.xml' | relative_url %}
         {% else %}
