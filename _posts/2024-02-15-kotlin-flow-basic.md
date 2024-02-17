@@ -70,6 +70,7 @@ Hot Stream은 공중목욕탕, Cold Stream은 료칸의 개인온천이다.
 
 ### 간단한 사용 방법
 Channel의 send, Flow의 emit 등의 방법으로 데이터를 생산하고 Channel의 consumeEach, Flow의 collect 등의 방법으로 데이터를 소비한다.
+
 ```kotlin
 val channel = Channel<Int>()
 // Producer
